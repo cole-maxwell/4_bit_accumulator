@@ -1,0 +1,94 @@
+ 
+****************************************
+Report : cell
+Design : accumulator
+Version: E-2010.12-SP5-2
+Date   : Tue Nov 10 07:00:36 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+SOUT_reg[0]               DFF_X1          NangateOpenCellLibrary
+                                                            4.5220  n
+SOUT_reg[1]               DFF_X1          NangateOpenCellLibrary
+                                                            4.5220  n
+SOUT_reg[2]               DFF_X1          NangateOpenCellLibrary
+                                                            4.5220  n
+SOUT_reg[3]               DFF_X1          NangateOpenCellLibrary
+                                                            4.5220  n
+U8                        AND2_X1         NangateOpenCellLibrary
+                                                            1.0640  
+U9                        AND2_X1         NangateOpenCellLibrary
+                                                            1.0640  
+U10                       AND2_X1         NangateOpenCellLibrary
+                                                            1.0640  
+U11                       AND2_X1         NangateOpenCellLibrary
+                                                            1.0640  
+U12                       OR2_X1          NangateOpenCellLibrary
+                                                            1.0640  
+U13                       AND2_X1         NangateOpenCellLibrary
+                                                            1.0640  
+U14                       INV_X1          NangateOpenCellLibrary
+                                                            0.5320  
+U15                       CLKBUF_X1       NangateOpenCellLibrary
+                                                            0.7980  
+U16                       OAI21_X1        NangateOpenCellLibrary
+                                                            1.0640  
+U17                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U18                       OAI21_X1        NangateOpenCellLibrary
+                                                            1.0640  
+U19                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U20                       NAND3_X1        NangateOpenCellLibrary
+                                                            1.0640  
+U21                       INV_X1          NangateOpenCellLibrary
+                                                            0.5320  
+U22                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U23                       NAND3_X1        NangateOpenCellLibrary
+                                                            1.0640  
+U24                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U25                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U26                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U27                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U28                       INV_X1          NangateOpenCellLibrary
+                                                            0.5320  
+U29                       OAI21_X1        NangateOpenCellLibrary
+                                                            1.0640  
+U30                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U31                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U32                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U33                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U34                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U35                       XOR2_X1         NangateOpenCellLibrary
+                                                            1.5960  
+U36                       INV_X1          NangateOpenCellLibrary
+                                                            0.5320  
+U37                       NAND2_X1        NangateOpenCellLibrary
+                                                            0.7980  
+U38                       INV_X1          NangateOpenCellLibrary
+                                                            0.5320  
+U39                       NAND4_X1        NangateOpenCellLibrary
+                                                            1.3300  
+U40                       OAI221_X1       NangateOpenCellLibrary
+                                                            1.5960  
+--------------------------------------------------------------------------------
+Total 37 cells                                             53.7320
+1

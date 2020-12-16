@@ -1,0 +1,153 @@
+** Generated for: hspiceD
+** Generated on: Nov  9 15:21:05 2020
+** Design library name: gates
+** Design cell name: 4_bit_accumulator
+** Design view name: schematic
+
+*------------------------------------------------------------------------
+* Parameters and models
+*------------------------------------------------------------------------
+
+* Transistor models.
+.include '$PDK_DIR/ncsu_basekit/models/hspice/hspice_nom.include'
+
+* Analysis commands
+.param vdd_val = 1.1
+.param clk_period = 58
+.param rise_fall_time = 0.10 * clk_period
+
+Vsupply vdd 0 vdd_val
+Vgnd gnd 0 0
+
+* Digital vector file for input from same directory
+.vec 'part_05_input.vec'
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
++    POST
+
+*------------------------------------------------------------------------
+* Subcircuits
+*------------------------------------------------------------------------
+
+** Library name: gates
+** Cell name: maj
+** View name: schematic
+.subckt maj cout gnd vdd _net1 _net2 _net0
+m4 net29 _net0 gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m3 net15 _net0 gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m2 net15 _net1 gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m1 cout _net1 net29 gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m0 cout _net2 net15 gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m9 net30 _net0 vdd vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m8 net17 _net0 vdd vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m7 net17 _net1 vdd vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m6 cout _net1 net30 vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m5 cout _net2 net17 vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+.ends maj
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: xor
+** View name: schematic
+.subckt xor a cin gnd s sout vdd _net0 _net2 _net1
+m7 net32 _net0 vdd vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m6 net26 a vdd vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m5 net31 sout net32 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m4 net31 _net1 net26 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m3 net25 _net1 net32 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m2 net25 sout net26 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m1 s cin net31 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m0 s _net2 net25 vdd PMOS_VTL L=50e-9 W=540e-9 AD=56.7e-15 AS=56.7e-15 PD=750e-9 PS=750e-9 M=1
+m15 net28 _net0 gnd gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m14 net22 a gnd gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m13 net29 sout net28 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m12 net29 _net1 net22 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m11 net23 _net1 net28 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m10 net23 sout net22 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m9 s cin net29 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+m8 s _net2 net23 gnd NMOS_VTL L=50e-9 W=270e-9 AD=28.35e-15 AS=28.35e-15 PD=480e-9 PS=480e-9 M=1
+.ends xor
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: not
+** View name: schematic
+.subckt not gnd in out vdd
+m0 out in gnd gnd NMOS_VTL L=50e-9 W=90e-9 AD=9.45e-15 AS=9.45e-15 PD=300e-9 PS=300e-9 M=1
+m1 out in vdd vdd PMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+.ends not
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: full_adder
+** View name: schematic
+.subckt full_adder a cin cout gnd s sout vdd
+xi0 cout gnd vdd net18 net20 net19 maj
+xi1 a cin gnd s sout vdd net18 net20 net19 xor
+xi4 gnd sout net19 vdd not
+xi3 gnd a net18 vdd not
+xi2 gnd cin net20 vdd not
+.ends full_adder
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: synch_rst
+** View name: schematic
+.subckt synch_rst d gnd rst s vdd
+m1 d rst vdd vdd PMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m0 d s vdd vdd PMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m3 net15 s gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m2 d rst net15 gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+.ends synch_rst
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: dyn_ff
+** View name: schematic
+.subckt dyn_ff d gnd phi sout vdd
+xi4 gnd phi net22 vdd not
+xi3 gnd net17 sout vdd not
+m8 net15 net22 net26 gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m1 net26 d gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m0 net17 phi net023 gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m2 net023 net15 gnd gnd NMOS_VTL L=50e-9 W=180e-9 AD=18.9e-15 AS=18.9e-15 PD=390e-9 PS=390e-9 M=1
+m7 net29 d vdd vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m6 net15 phi net29 vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m5 net28 net15 vdd vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+m4 net17 net22 net28 vdd PMOS_VTL L=50e-9 W=360e-9 AD=37.8e-15 AS=37.8e-15 PD=570e-9 PS=570e-9 M=1
+.ends dyn_ff
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: accumulator
+** View name: schematic
+.subckt accumulator a cin cout gnd phi rst sout vdd
+xi0 a cin cout gnd net21 sout vdd full_adder
+xi1 net20 gnd rst net21 vdd synch_rst
+xi2 net20 gnd phi sout vdd dyn_ff
+.ends accumulator
+** End of subcircuit definition.
+
+** Library name: gates
+** Cell name: 4_bit_accumulator
+** View name: schematic
+xi3 a3 net3 cout gnd phi rst sout3 vdd accumulator
+xi2 a2 net4 net3 gnd phi rst sout2 vdd accumulator
+xi1 a1 net5 net4 gnd phi rst sout1 vdd accumulator
+xi0 a0 cin net5 gnd phi rst sout0 vdd accumulator
+
+*------------------------------------------------------------------------
+* Stimulus
+*------------------------------------------------------------------------
+
+.tran 1ps 1820ps SWEEP clk_period POI 3 70 100 130 
+
+* Measure average power
+.MEASURE pwr_100 AVG P(Vsupply) FROM=0ps TO=1400ps
+
+.END

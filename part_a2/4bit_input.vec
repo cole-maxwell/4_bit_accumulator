@@ -1,0 +1,54 @@
+;comment
+radix 1111
+io iiii
+vname A CIN RST PHI
+tunit ps
+period clk_period
+trise rise_fall_time
+tfall rise_fall_time
+vih vdd_val
+vil 0
+
+;Input values
+
+;Reset sequence
+0000
+0001
+
+;Test sequence 1: All 3 inputs go high, so S and COUT should go high
+;Testing the FA inverters, the XOR 3/3 functionality, and the MAJ 3/3 going high
+
+;Only A goes high
+1010
+
+;Only SOUT goes high
+0011
+
+;Reset sequence
+0000
+0001
+
+;Only CIN goes high
+0110
+
+;Both CIN and SOUT goes high, causing COUT to go high
+0111
+
+;All three of A, CIN and SOUT go high, causing COUT to go high
+1110
+
+;Both A and SOUT goes high, causing COUT to go high
+1011
+
+;Reset sequence
+0000
+0001
+
+;Both A and CIN goes high, causing COUT to go high
+1110
+
+;Only SOUT high
+0001
+
+
+

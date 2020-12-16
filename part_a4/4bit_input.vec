@@ -1,0 +1,24 @@
+;comment
+radix 1111111
+io iiiiiii
+vname A0 A1 A2 A3 CIN RST PHI
+tunit ps
+period clk_period
+trise rise_fall_time
+tfall rise_fall_time
+vih vdd_val
+vil 0
+
+;input
+0000000
+0100011
+1010010
+0000011
+1000010
+1110011
+0000010
+1000011
+0010010
+0000011
+
+

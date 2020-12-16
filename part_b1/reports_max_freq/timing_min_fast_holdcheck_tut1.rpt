@@ -1,0 +1,52 @@
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : accumulator
+Version: E-2010.12-SP5-2
+Date   : Tue Nov 10 07:00:31 2020
+****************************************
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: SOUT_reg[0]
+              (rising edge-triggered flip-flop clocked by PHI)
+  Endpoint: SOUT_reg[0]
+            (rising edge-triggered flip-flop clocked by PHI)
+  Path Group: PHI
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accumulator        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  SOUT_reg[0]/CK (DFF_X1)                0.0000     0.0000 r
+  SOUT_reg[0]/Q (DFF_X1)                 0.0632     0.0632 r
+  U35/Z (XOR2_X1)                        0.0362     0.0994 f
+  U10/ZN (AND2_X1)                       0.0251     0.1245 f
+  SOUT_reg[0]/D (DFF_X1)                 0.0091     0.1337 f
+  data arrival time                                 0.1337
+
+  clock PHI (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  clock uncertainty                      0.0500     0.0500
+  SOUT_reg[0]/CK (DFF_X1)                0.0000     0.0500 r
+  library hold time                      0.0028     0.0528
+  data required time                                0.0528
+  -----------------------------------------------------------
+  data required time                                0.0528
+  data arrival time                                -0.1337
+  -----------------------------------------------------------
+  slack (MET)                                       0.0809
+
+
+1
